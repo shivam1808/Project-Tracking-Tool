@@ -16,12 +16,22 @@ class Landing extends Component {
         <div className="light-overlay landing-inner text-dark">
           <div className="container">
             <div className="row">
-              <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">
-                  Personal Project Management Tool
+              <div className="col-md-2 text-center">
+                <img src={process.env.PUBLIC_URL+"icon.svg"} style={{height:100, width:100}} />
+              </div>
+              <div className="col-md-10">
+                <h1 className="display-3 mb-4" style={{fontWeight: 'bold'}}>
+                  Project Tracking Tool
                 </h1>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-12 text-center">
                 <p className="lead">
-                  Create your account to join active projects or start your own
+                  Add and Manage all your <b>Project(s)</b>
+                </p>
+                <p className="lead">
+                <b>Project tracker</b> is a tool that measures project performance, helping you keep your project's scope, budget, and schedule in check.
                 </p>
                 <hr />
                 <Link className="btn btn-lg btn-primary mr-2" to="/register">

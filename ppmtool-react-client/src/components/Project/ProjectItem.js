@@ -20,6 +20,7 @@ class ProjectItem extends Component {
             </div>
             <div className="col-lg-6 col-md-4 col-8">
               <h3>{project.projectName}</h3>
+              <hr/>
               <p>{project.description}</p>
             </div>
             <div className="col-md-4 d-none d-lg-block">
@@ -34,14 +35,8 @@ class ProjectItem extends Component {
                     <i className="fa fa-edit pr-1"> Update Project Info</i>
                   </li>
                 </Link>
-
-                <li
-                  className="list-group-item delete"
-                  onClick={this.onDeleteClick.bind(
-                    this,
-                    project.projectIdentifier
-                  )}
-                >
+                <li className="list-group-item delete" 
+                  onClick={this.onDeleteClick.bind(this, project.projectIdentifier)}>
                   <i className="fa fa-minus-circle pr-1"> Delete Project</i>
                 </li>
               </ul>

@@ -68,10 +68,11 @@ class Header extends Component {
     }
 
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
+          <img src={process.env.PUBLIC_URL+"project.png"} style={{height:30, width:30, marginRight:"20px"}} />
           <Link className="navbar-brand" to="/">
-            Personal Project Management Tool
+            Project Tracking Tool
           </Link>
           <button
             className="navbar-toggler"

@@ -31,11 +31,10 @@ public class User implements UserDetails {
     private Date create_At;
     private Date update_At;
 
-    //OneToMany with Project
+    // OneToMany with Project
 
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "user", orphanRemoval = true)
     private List<Project> projects = new ArrayList<>();
-
 
     public User() {
     }
@@ -105,19 +104,16 @@ public class User implements UserDetails {
     }
 
     @PrePersist
-    protected void onCreate(){
+    protected void onCreate() {
         this.create_At = new Date();
     }
 
     @PreUpdate
-    protected void onUpdate(){
+    protected void onUpdate() {
         this.update_At = new Date();
     }
 
-
-    //UserDetails interface methods
-
-
+    // UserDetails interface methods
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
