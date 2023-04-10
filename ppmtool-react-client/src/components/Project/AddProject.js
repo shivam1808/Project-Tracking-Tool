@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { createProject } from "../../actions/projectActions";
+import { createProject, getProjects } from "../../actions/projectActions";
 import classnames from "classnames";
+import _uniqueId from 'lodash/uniqueId';
 
 class AddProject extends Component {
   constructor() {
@@ -19,6 +20,12 @@ class AddProject extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const uniqueId = (prefix = 'PRO-') => prefix + Math.random().toString(16).slice(-4);
+    this.setState({projectIdentifier: uniqueId().toUpperCase()});
+    this.props.getProjects();
   }
 
   //life cycle hooks
@@ -152,5 +159,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { createProject }
+  { createProject, getProjects }
 )(AddProject);
